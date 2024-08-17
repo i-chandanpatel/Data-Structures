@@ -446,7 +446,4 @@ void pattern23(int n){
 		cout<<endl;
 	}
 }
-int main(){
-	//pattern(n);
-	return 0;
-}
+
