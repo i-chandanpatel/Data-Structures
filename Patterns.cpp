@@ -1,3 +1,6 @@
+#include<iostream>
+using namespace std;
+
 //Pattern 1
 // *****
 // *****
@@ -585,3 +588,6 @@ void pattern32(int n){
 	}
 }
 
+int main(){
+	pattern1(5);
+}
