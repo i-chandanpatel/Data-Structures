@@ -1,6 +1,3 @@
-#include<iostream>
-using namespace std;
-
 //Pattern 1
 // *****
 // *****
@@ -442,6 +439,147 @@ void pattern23(int n){
 			int down=(2*n-2)-i;
 			
 			cout<<(n-min(min(top,down), min(left, right)));
+		}
+		cout<<endl;
+	}
+}
+//Pattern 24
+//1
+//21
+//321
+//4321
+void pattern24(int n){
+	for(int i=1; i<=n; i++){
+		for(int j=i; j>0; j--){
+			cout<<j;
+		}
+		cout<<endl;
+	}
+}
+
+//Pattern 25
+//1234
+//123
+//12
+//1
+void pattern25(int n){
+	for(int i=n; i>0; i--){
+		for(int j=1; j<=i; j++){
+			cout<<j;
+		}
+		cout<<endl;
+	}
+}
+
+//Pattern 26
+//4321
+//432
+//43
+//4
+void pattern26(int n){
+	for(int i=0; i<n; i++){
+		for(int j=n; j>=i+1; j--){
+			cout<<j;
+		}
+		cout<<endl;
+	}
+}
+
+//Pattern 27
+//4
+//43
+//432
+//4321
+void pattern27(int n){
+	for(int i=n; i>0; i--){
+		for(int j=n; j>=i; j--){
+			cout<<j;
+		}
+		cout<<endl;
+	}
+}
+
+//Pattern 28
+//   A
+//  AB
+// ABC
+//ABCD
+void pattern28(int n){
+	for(int i=1; i<=n; i++){
+		for(int j=1; j<=n-i; j++){
+			cout<<" ";
+		}
+		for(char ch='A'; ch<='A'+i-1; ch++){
+			cout<<ch;
+		}
+		cout<<endl;
+	}
+}
+
+//Pattern 29
+//   *
+//  **
+// ***
+//****
+
+void pattern29(int n){
+	for(int i=0; i<n; i++){
+		for(int j=0; j<n-(i+1); j++){
+			cout<<" ";
+		}
+		for(int j=0; j<=i; j++){
+			cout<<"*";
+		}
+		cout<<endl;
+	}
+}
+
+//Pattern 30
+//   0
+//  11
+// 222
+//3333
+void pattern30(int n){
+	for(int i=0; i<n; i++){
+		for(int j=0; j<n-(i+1); j++){
+			cout<<" ";
+		}
+		for(int j=0; j<=i; j++){
+			cout<<i;
+		}
+		cout<<endl;
+	}
+}
+
+//Pattern 31
+//   0
+//  01
+// 012
+//0123
+void pattern31(int n){
+	for(int i=0; i<n; i++){
+		for(int j=0; j<n-(i+1); j++){
+			cout<<" ";
+		}
+		for(int j=0; j<=i; j++){
+			cout<<j;
+		}
+		cout<<endl;
+	}
+}
+
+//Pattern 32
+//   1
+//  12
+// 123
+//1234
+void pattern32(int n){
+	for(int i=1; i<=n; i++){
+		for(int j=0; j<=n-(i+1); j++){
+			cout<<" ";
+		}
+		for(int j=1; j<=i; j++){
+			cout<<j;
 		}
 		cout<<endl;
 	}
