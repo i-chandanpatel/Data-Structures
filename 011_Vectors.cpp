@@ -19,6 +19,12 @@ int main() {
     cout << "Last element: " << vec.back() << endl;
     cout << "Element at index 2: " << vec[2] << " OR " << vec.at(1) << endl;
 
+    //size() = actual number of elements in the vector.
+    //capacity() = memory space allocated (may be more than size).
+    //Capacity grows dynamically: usually doubles when full.
+    cout << "Size: " << vec.size() << endl;
+    cout << "Capacity: " << vec.capacity()<< endl;
+
     vec.clear();
     cout << "Size after clear: " << vec.size() << endl;
 
