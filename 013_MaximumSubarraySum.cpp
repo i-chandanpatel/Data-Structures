@@ -17,6 +17,21 @@ int maxSubarraySum(int arr[], int n){
 	return maxSum;
 }
 
+
+int maxSubarraySum2(int arr[], int n) {
+    int maxSum = INT_MIN;
+
+    for (int st = 0; st < n; st++) {
+        int currSum = 0;
+        for (int end = st; end < n; end++) {
+            currSum += arr[end];
+            maxSum = max(currSum, maxSum);
+        }
+    }
+
+    return maxSum;
+}
+
 //Using Prefix Array
 int maxSubarraySum_Prefix(int arr[], int n){
 	int currSum=0;
