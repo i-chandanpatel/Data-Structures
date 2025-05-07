@@ -14,13 +14,22 @@ int majorityElement(vector<int> arr){
 return -1;
 }
 
-int majorityElement2(vector<int> arr){
-  int size=arr.size();
-  sort(arr.begin(), arr.end());
-  for(int i=0; i<size(); i++){
-    
-  }
-  
+//Optimized
+int majorityElement2(vector<int> arr) {
+    int size = arr.size();
+    sort(arr.begin(), arr.end());
+
+    int freq = 1, val = arr[0];
+    for (int i = 1; i < size; i++) {
+        if (arr[i] == val) {
+            freq++;
+        } else {
+            freq = 1;
+            val = arr[i];
+        }
+        if (freq > size / 2) return val;
+    }
+    return -1;
 }
 
 int main(){
