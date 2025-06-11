@@ -34,11 +34,21 @@ int maxSubarraySum2(int arr[], int n) {
 // Using Prefix Array (O(n^2))
 int maxSubarraySum_Prefix(int arr[], int n) {
     int currSum = 0, maxSum = INT_MIN;
-    int prefix[n];
+    int prefix[n];  //Stores cumulative sums
     prefix[0] = arr[0];
+
+   //Loop Computes cumulative/prefix sums:
+   //prefix[0] = arr[0]
+   //prefix[1] = arr[0] + arr[1]
+   //prefix[2] = arr[0] + arr[1] + arr[2]
+   //If arr = {2, -1, 3, -4, 5}
+   //Then prefix = {2, 1, 4, 0, 5}
+
     for (int i = 1; i < n; i++) {
         prefix[i] = prefix[i - 1] + arr[i];
     }
+
+    //For each subarray arr[i...j], calculate its sum using the prefix array
     for (int i = 0; i < n; i++) {
         for (int j = i; j < n; j++) {
             currSum = i == 0 ? prefix[j] : prefix[j] - prefix[i - 1];
