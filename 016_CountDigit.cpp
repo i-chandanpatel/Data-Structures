@@ -4,7 +4,6 @@ using namespace std;
 int count(int n){
 int cnt=0;
   while(n>0){
-    n%=10;
     n/=10;
     cnt++;
   }
