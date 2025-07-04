@@ -588,6 +588,24 @@ void pattern32(int n){
 	}
 }
 
+//Pattern 33
+//*   *
+// * * 
+//  *  
+void pattern33(int n){
+    int totalCols = 2 * n - 1;
+    for (int row = 0; row < n; row++) {
+        for (int col = 0; col < totalCols; col++) {
+            if (col == row || col == totalCols - row - 1) {
+                cout << "*";
+            } else {
+                cout << " ";
+            }
+        }
+        cout << endl;
+    }
+}
+
 int main(){
 	pattern1(5);
 }
