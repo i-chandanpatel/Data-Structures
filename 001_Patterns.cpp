@@ -606,6 +606,119 @@ void pattern33(int n){
     }
 }
 
+
+//Pattern 34
+// 12345
+// 2   5
+// 3  5
+// 4 5
+// 5
+void pattern34(int n){
+	for(int i=1; i<=n; i++){
+		for(int j=i; j<=n; j++){
+			if(j==i|| j==n || i==1){
+				cout<<j;
+			}else{
+				cout<<" ";
+			}
+		}
+		cout<<endl;
+	}
+}
+
+//Pattern 35
+// **** ****
+// ***   ***
+// **     **
+// *       *
+// *       *
+// **     **
+// ***   ***
+// **** ****
+void pattern35(int n){
+	for(int row=0; row<n; row++){
+		for(int col=0; col<n-row; col++){
+			cout<<"*";
+		}
+		for(int col=0; col<2*row+1; col++){
+			cout<<" ";
+		}
+		for(int col=0; col<n-row; col++){
+			cout<<"*";
+		}
+		cout<<endl;
+	}
+	for(int row=0; row<n; row++){
+		for(int col=0; col<=row; col++){
+			cout<<"*";
+		}
+		for(int col=0; col<2*n-2*row-1; col++){
+			cout<<" ";
+		}
+		for(int col=0; col<=row; col++){
+			cout<<"*";
+		}
+		cout<<endl;
+	}
+}
+
+
+//Pattern 36
+// 1
+// 2*2
+// 3*3*3
+// 4*4*4*4
+// 5*5*5*5*5
+void pattern36(int n){
+	for(int i=0;i<n; i++){
+		for(int j=0; j<=2*i; j++){
+		if(j%2==0)	cout<<i+1;
+		else	cout<<"*";
+		}cout<<endl;
+	}
+}
+
+// Pattern 37
+// A
+// ABA
+// ABCBA
+// ABCDCBA
+// ABCDEDCBA
+void pattern37(int n){
+	for(int i=0; i<n; i++){
+		char ch;
+		for(int j=0; j<=i; j++){
+			ch= j+'A';
+			cout<<ch;
+		}
+		while(ch>'A'){
+			ch-=1;
+			cout<<ch;
+		}
+		cout<<endl;
+	}
+}
+
+
+//******1******
+//*****2*2*****
+//****3*3*3****
+//***4*4*4*4***
+void pattern38(int n){
+	for(int i=0; i<n; i++){
+		for(int j=0; j<2*n-i-2; j++){
+			cout<<"*";
+		}
+		for(int j=0; j<=2*i; j++){
+			if(j%2==0)	cout<<i+1;
+			else	cout<<"*";
+		}
+		for(int j=0; j<2*n-i-2; j++){
+			cout<<"*";
+		}
+		cout<<endl;
+	}
+}
 int main(){
 	pattern1(5);
 }
