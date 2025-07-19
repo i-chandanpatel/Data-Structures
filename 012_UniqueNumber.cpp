@@ -2,7 +2,7 @@
 #include <vector>
 using namespace std;
 
-int singleNumber(const vector<int>& nums) {
+int uniqueNumVec(const vector<int>& nums) {
     int ans = 0;
 
     // XOR all elements
@@ -21,7 +21,7 @@ int uniqueElement(int arr[], int n){
 }
 int main() {
     vector<int> nums = {4, 1, 2, 1, 2};
-    cout<<singleNumber(nums);
+    cout<<uniqueNumVec(nums);
 
     // int arr[]={1,1,5,6,4,4,5};
 	// int n=sizeof(arr)/sizeof(arr[0]);
