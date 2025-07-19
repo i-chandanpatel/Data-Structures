@@ -3,6 +3,14 @@
 using namespace std;
 
 int main() {
+    //We can create arrays Dynamically
+    // int n;
+    // cin>>n;
+    // int *arr=new int[n];
+
+    //But if even after creating Array Dynamically, there could be a
+    //need of more space and there vector comes in picture
+    //it doubles the size when it fulls
     vector<int> vec = {5, 2, 9, 1, 7};
     vec.push_back(3);                  // Add to end
     
