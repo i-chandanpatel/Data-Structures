@@ -1,31 +1,48 @@
-#include<iostream>
+#include <iostream>
+#include <vector>
+#include <algorithm>
 using namespace std;
 
-int maxArea(vector<int>& height){
-	int ht, width, maxWater, currWater;
-	for(int i=0; i<height.size(); i++){
-		for(int j=i+1; j<height.size(); j++){
-			ht=min(height[i],height[j]);
-			width=j-i;
-			currWater=ht*width;
-			maxwater=max(maxWater,carrWater);
-		}
-	}
-	return maxWater;
+// Brute Force approach (O(n^2))
+int maxAreaBrute(vector<int>& height) {
+    int maxWater = 0;
+    for (int i = 0; i < height.size(); i++) {
+        for (int j = i + 1; j < height.size(); j++) {
+            int ht = min(height[i], height[j]);
+            int width = j - i;
+            int currWater = ht * width;
+            maxWater = max(maxWater, currWater);
+        }
+    }
+    return maxWater;
 }
-int maxArea(vector<int>& height){
-	int left=0, right=height.size()-1, width, ht, currWater;
-	while(left<right){
-		width=right-left;
-		ht=min(right,left);
-		currWater=width*ht;
-		maxWater=max(maxWater,currWater);
-		if(height[left]<height[right])	left++;
-		else	right--;
-	}
-	return maxWater;
+
+// Optimal Two Pointer approach (O(n))
+int maxAreaOptimal(vector<int>& height) {
+    int left = 0, right = height.size() - 1;
+    int maxWater = 0;
+    
+    while (left < right) {
+        int ht = min(height[left], height[right]);
+        int width = right - left;
+        int currWater = ht * width;
+        maxWater = max(maxWater, currWater);
+
+        // Move the shorter line
+        if (height[left] < height[right]) 
+            left++;
+        else 
+            right--;
+    }
+    
+    return maxWater;
 }
-int main(){
-	
-	return 0;
+
+int main() {
+    vector<int> height = {1, 8, 6, 2, 5, 4, 8, 3, 7};
+
+    cout << "Max Water (Brute): " << maxAreaBrute(height) << endl;
+    cout << "Max Water (Optimal): " << maxAreaOptimal(height) << endl;
+
+    return 0;
 }
