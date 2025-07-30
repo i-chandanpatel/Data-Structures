@@ -2,11 +2,14 @@
 using namespace std;
 
 bool isPrime(int n) {
-    if (n <= 1) return false;
-    for (int i = 2; i * i <= n; i++) {  //Checking from 1 to √n
-        if (n % i == 0) return false;
+    if (n <= 1) return false; // 0 and 1 are not prime
+
+    // Loop from 2 to √n
+    for (int i = 2; i * i <= n; i++) {
+        if (n % i == 0) return false; // Divisible → not prime
     }
-    return true;
+
+    return true; // No divisors found → prime
 }
 
 int main() {
@@ -14,6 +17,7 @@ int main() {
     cout << "Enter a number: ";
     cin >> num;
 
+    //Check for prime
     if (isPrime(num))
         cout << num << " is a prime number." << endl;
     else
