@@ -14,6 +14,7 @@ int peakIndex(int arr[], int n){
 			end=mid-1;
 	}
 }
+
 int main(){
 	int n=5;
 	int arr[n]={4,5,6,2,3};
