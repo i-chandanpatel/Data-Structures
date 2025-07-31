@@ -58,7 +58,7 @@ int main(){
     vector<int> arr = {1, 2, 3, 3, 3, 4};
     int first = firstOccurrence(arr, 3);
     int last = lastOccurrence(arr,3);
-    int totalOccurrence = first-last;
+    int totalOccurrence = first - last + 1;
   
     cout<<"Total Occurrence: "<<totalOccurrence;
 
