@@ -5,6 +5,7 @@
 //each student has to be allocated at least one book
 //Allotment should be in contiguous order
 
+//Note Change file name to BookAllocationProblem
 
 public class BookAllocationProblem {
 
@@ -78,4 +79,5 @@ public class BookAllocationProblem {
         System.out.println(allocateBook(arr, students)); // Expected Output: 6
     }
 }
+
 
